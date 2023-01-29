@@ -1,7 +1,5 @@
 import { Ul, Span, Item } from 'components/ContactList/contactList.styled';
 import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
-// import { removeContact } from 'redux/contactsSlice';
 import { useSelector } from 'react-redux';
 import { getFilter } from 'redux/selectors';
 import {
@@ -12,10 +10,8 @@ import {
 export const ContactList = () => {
   const filterValue = useSelector(getFilter);
 
-  // const dispatch = useDispatch();
-
   const { data } = useGetContactsQuery();
-  const [deleteContact, {isLoading}] = useDeleteContactsMutation();
+  const [deleteContact, { isLoading }] = useDeleteContactsMutation();
 
   const getVisibleList = () => {
     const normalizedFilter = filterValue.toLowerCase();

@@ -1,14 +1,7 @@
 import { Name, Number, Label } from 'components/ContactForm/contactForm.styled';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { addContact } from 'redux/contactsSlice';
-// import { getContacts } from 'redux/selectors';
 import { useGetContactsQuery, useAddContactsMutation } from 'redux/operations';
 
 export default function ContactForm() {
-  // const contactsList = useSelector(getContacts);
-
-  // const dispatch = useDispatch();
-
   const { data } = useGetContactsQuery();
   const [addContact] = useAddContactsMutation();
 
@@ -34,8 +27,8 @@ export default function ContactForm() {
     }
     const contact = {
       name: name,
-      number: number
-    }
+      number: number,
+    };
     console.log(addContact);
     addContact(contact);
     form.reset();
