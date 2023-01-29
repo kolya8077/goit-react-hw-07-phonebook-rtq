@@ -5,6 +5,8 @@ export default function ContactForm() {
   const { data } = useGetContactsQuery();
   const [addContact] = useAddContactsMutation();
 
+  console.log(addContact)
+
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
